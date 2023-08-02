@@ -1,0 +1,14 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome(executable_path="C:/Users/DELL/Downloads/chromedriver_win32/chromedriver.exe")
+driver.get("https://www.w3Schools.com/")
+driver.maximize_window()
+print("Title of the Page : ", driver.title)
+logo = driver.find_element(By.XPATH, "/html/body/div[3]/a[1]/i")
+if logo.is_displayed():
+    print("w3Schools logo is displayed")
+else:
+    print("w3Schools logo is not displayed")
+
+driver.close()
